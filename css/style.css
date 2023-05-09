@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
+
+:root{
+    --mini_box_hover : #c5dbf1;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.page{
+    height: 100vh;
+    width: 100vw;
+    background-color: #341f97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Main game area Design  */
+.ttt_box{
+    height: 500px;
+    width: 500px;
+    background-color: #f5f6fa;
+    border-radius: 10px;
+    padding: 50px;
+}
+.game_box{
+    width: 101%;
+    height: 101%;
+    background-color: black;
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.mini_box{
+    background-color: #f5f6fa;
+}
+
+/* .mini_box:hover {
+    background-color: var(--mini_box_hover);
+    transition: 0.2s;
+} */
+
+/* Border Radius */
+.mini_box:nth-child(1) {
+    border-bottom-right-radius: 10px;
+}
+.mini_box:nth-child(2) {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.mini_box:nth-child(3) {
+    border-bottom-left-radius: 10px;
+}
+.mini_box:nth-child(4) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.mini_box:nth-child(6) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.mini_box:nth-child(5) {
+    border-radius: 10px;
+}
+.mini_box:nth-child(7) {
+    border-top-right-radius: 10px;
+}
+.mini_box:nth-child(8) {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.mini_box:nth-child(9) {
+    border-top-left-radius: 10px;
+}
+
+
+/* Circle Design */
+.circle{
+    position: relative;
+}
+.circle::after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #341f97;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.circle::before{
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+/* Cross Button Design*/
+.cross{
+    position: relative;
+}
+.cross::after{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 100px;
+    background-color: #222f3e !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 5px;
+    z-index: 10;
+}
+.cross::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 100px;
+    background-color: #341f97;   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-radius: 5px;
+}
+
+/* Hiding the Boxes */
+.d_none{
+    display: none !important;
+}
+/* Winner Section  */
+.winner{
+    background-color: #eee;  
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.winner_wrapper{
+    text-align: center;
+}
+.winner_wrapper h1{
+    font-size: 48px;
+    font-family: 'Titillium Web',
+    sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.winner img{
+    width: 80px;
+    animation: wobble;
+    animation-duration: 1.5s;
+}
+@keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+#PlayerName {
+    font-size: 60px;
+    color: #341f97;
+}
